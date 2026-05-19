@@ -59,13 +59,39 @@
 # 함수 내부에서 전역변수를 수정하고 싶을 떄 사용합니다.
 
 
+# # global count
+
+# count = 0
+
+# def alal():
+#     global count
+#     count += 1
+#     print(count)
+
+# alal()
+
+# nameList = ['철수','영희','기훈']
 
 
-count = 0
+# for i, name in enumerate(nameList):
+#     print('{}: {}'.format(i + 1, name))
 
-def alal():
-    global count
-    count += 1
-    print(count)
 
-alal()
+# student = {
+#     '이름': '홍길동',
+#     '나이': 25
+# }
+
+# print(f'나이: {student['나이']}')
+
+# def modifyStudentAge():
+#     student['나이'] += 1
+
+# modifyStudentAge()
+# print(f'나이: {student['나이']}')
+
+def print_round(number):
+    print(round(number))
+    
+print_round(4.6)
+print_round(2.2)

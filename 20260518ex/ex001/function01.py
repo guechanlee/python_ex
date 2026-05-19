@@ -134,22 +134,54 @@
 을 함수를 이용해서 만들어봅시다.
 '''
 
-def calculator():
-    if selectedOperator == 1:       # 덧셈
-        print(f'덧셈 결과: {inputNumber1 + inputNumber2}')
+
+# 부품을 미리 만들어놓기 (테스트)
+
+# def add():  
+#     print(f'덧셈 결과: {inputNumber1 + inputNumber2}')
+
+# def sub():
+#     print(f'뺄셈 결과: {inputNumber1 - inputNumber2}')
+
+# def mul():
+#     print(f'곱셈 결과: {inputNumber1 * inputNumber2}')
+
+# def div():
+#     print(f'나눗셈 결과: {inputNumber1 / inputNumber2}')
+
+# # 이후에 부품을 집어넣기
+
+# def calculator():
+#     if selectedOperator == 1:       # 덧셈
+#         add()
         
-    elif selectedOperator == 2:     # 뺄셈
-        print(f'뺄셈 결과: {inputNumber1 - inputNumber2}')
+#     elif selectedOperator == 2:     # 뺄셈
+#         sub()
 
-    elif selectedOperator == 3:     # 곱셈
-        print(f'곱셈 결과: {inputNumber1 * inputNumber2}')
+#     elif selectedOperator == 3:     # 곱셈
+#         mul()
 
-    elif selectedOperator == 4:     # 나눗셈
-        print(f'나눗셈 결과: {inputNumber1 / inputNumber2}')
+#     elif selectedOperator == 4:     # 나눗셈
+#         div()
 
-inputNumber1 = float(input('숫자를 입력하세요. '))
-selectedOperator = int(input('연산자를 선택하세요. 1.덧셈    2.뺄셈    3.곱셈    4.나눗셈'))
-inputNumber2 = float(input('숫자를 입력하세요. '))
+# inputNumber1 = float(input('숫자를 입력하세요. '))
+# selectedOperator = int(input('연산자를 선택하세요. 1.덧셈    2.뺄셈    3.곱셈    4.나눗셈'))
+# inputNumber2 = float(input('숫자를 입력하세요. '))
 
 
-calculator()
+# calculator()
+
+# TDD 실제 코드를 작성하기 전에 테스트 케이스를 먼저 작성하는 소프트웨어 개발 방법론
+
+
+
+
+
+
+
+
+
+for num1 in range(2,10):
+    for num2 in range(1,10):
+
+        print(f'{num1} x {num2} = {num1 * num2}')
