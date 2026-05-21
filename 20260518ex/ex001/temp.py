@@ -76,3 +76,12 @@ operator = int(input('연산자 입력: 1.덧셈      2.뺄셈      3.곱셈    
 num2 = float(input('두 번째 숫자 입력: '))
 
 calculater()
+
+# 유치원에 납품되는 계산기를 만들어 주세요.(뎃셈, 뺄셈)
+
+def lowCalculator():
+    if operator == 1:
+        add()
+    elif operator == 2:
+        sub()
+ 

@@ -90,8 +90,6 @@
 # modifyStudentAge()
 # print(f'나이: {student['나이']}')
 
-def print_round(number):
-    print(round(number))
+
     
-print_round(4.6)
-print_round(2.2)
+
