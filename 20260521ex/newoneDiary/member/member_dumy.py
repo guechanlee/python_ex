@@ -16,3 +16,4 @@ def dumyInit():
         }
 
         diary_db.diaryDB[ids[n]] = []
+

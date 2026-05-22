@@ -3,7 +3,7 @@ from member import session
 from db import member_db
 from db import diary_db
 from member import member_dumy
-import copy 
+import copy
 
 if config.DEV_MOD:
     member_dumy.dumyInit()
@@ -17,10 +17,10 @@ while flag:
     menuNum = ''
     if session.signInedMemberId == '':
         # sign out 상태
-        menuNum = int(input('1.sign-up    2.sign-in     6.write     7.read    99.end'))
+        menuNum = int(input('1.sign-up    2.sign-in    6.write    7.read    99.end'))
     else:
         # sign in 상태
-        menuNum = int(input('3.modify     5.sign-out    4.delete    6.write     7.read      99.end'))
+        menuNum = int(input('3.modify    5.sign-out    4.delete    6.write    7.read    99.end'))
 
     if menuNum == config.SIGN_UP:
         print('1.sign-up')
@@ -75,13 +75,14 @@ while flag:
 
         '''
             - member_db 모듈에 있는 memberDB 딕셔너리에서 회원정보를 변경한다.
-            - 지금 현재 memberDB에는 'gildong','chanho'회원이 있다
-            - 현재 로그인되어 있는 회원 정보를 불러와서 그 정보를 수정합니다.
+            - 지금 현재 memberDB에는 'gildong', 'chanho'회원이 있죠? 네!
+            - 대명씨 의견: 현재 로그인되어 있는 회원 정보를 불러와서 그 정보를 수정합니다.
             - 즉, session.signInedMemberId에서 현재 로그인 되어 있는 회원 ID를 가져와서
             - 사용하면 됩니다.
         '''
-        curretSignInedMemberID = session.signInedMemberId
-        memberInfo = member_db.memberDB[curretSignInedMemberID]
+
+        currentSignInedMemberID = session.signInedMemberId
+        memberInfo = member_db.memberDB[currentSignInedMemberID]
         if config.DEV_MOD: print(f'memberInfo: {memberInfo}')
 
         memberInfo['uPw'] = uPw
@@ -93,12 +94,12 @@ while flag:
     elif menuNum == config.MEMBER_DELETE:
         print('4.delete')
         '''
-         - 현재 로그인 되어 있는 회원의 ID를 session.signInedMemberI에서 가져와서
+         - 현재 로그인 되어 있는 회원의 ID를 session.signInedMemberId에서 가져와서
          - 해당하는 회원의 정보를 member_db.memberDB에 삭제 합니다.
         '''
-        curretSignInedMemberID = session.signInedMemberId
-        del member_db.memberDB[curretSignInedMemberID]
-        
+        currentSignInedMemberID = session.signInedMemberId
+        del member_db.memberDB[currentSignInedMemberID]
+
         print('Member info deleted!!')
         session.signInedMemberId = ''
         if config.DEV_MOD: print(f'member_db.memberDB: {member_db.memberDB}')
@@ -109,9 +110,9 @@ while flag:
     elif menuNum == config.SIGN_OUT:
         print('5.sign_out')
         '''
-        - 메뉴를 변경해야겠다.
-        - 로그인 값을 없애야 겠다.
-        - session 모듈에 signInedMemberID 변수에 있다
+         - 메뉴를 변경해야겠다.
+         - 로그인 값을 없애야겠다.
+         - session 모듈에 signInedMemberId 변수에 있는거죠? 넵!
         '''
         print('sign-out success!!')
         session.signInedMemberId = ''
@@ -124,13 +125,12 @@ while flag:
 
         else:
             while True:
-                diaryTxt = input('10글자 이하의 짧으 일기를 작성하세요. ')
+                diaryTxt = input('10글자 이하의 짧은 일기를 작성하세요. ')
                 if len(diaryTxt) > 10:
                     print(f'10글자 초과 했어요.({len(diaryTxt)})')
                 else:
                     diary_db.diaryDB[session.signInedMemberId].append(diaryTxt)
                     if config.DEV_MOD: print(f'diary_db.diaryDB: {diary_db.diaryDB}')
-
                     break
 
     elif menuNum == config.DIARY_READ:
@@ -140,12 +140,10 @@ while flag:
             print('Sorry! Please sign-in!!')
 
         else:
-            curretSignInedMemberID = session.signInedMemberId
-            myDiaries = diary_db.diaryDB[curretSignInedMemberID]
+            currentSignInedMemberID = session.signInedMemberId
+            myDiaries = diary_db.diaryDB[currentSignInedMemberID]
 
             deepCopyedDiaries = copy.deepcopy(myDiaries)
-            deepCopyedDiaries.reverse()
+            deepCopyedDiaries.reverse()     # 순서 바뀐다.
             for idx, diaryTxt in enumerate(deepCopyedDiaries):
                 print(f'({idx+1}): {diaryTxt}')
-
-        pass    
