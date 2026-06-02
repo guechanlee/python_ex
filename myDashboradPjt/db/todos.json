@@ -1,0 +1,25 @@
+{
+    "gildong": [
+        {
+            "tTxt": "1234",
+            "tExpDate": "2",
+            "tRegDate": "2026-06-02 14:28:38",
+            "tModDate": "2026-06-02 14:28:38",
+            "tComplete": false
+        },
+        {
+            "tTxt": "서울가자",
+            "tExpDate": "2026-06-02 12:51:48",
+            "tRegDate": "2026-06-02 13:51:50",
+            "tModDate": "2026-06-02 13:51:50",
+            "tComplete": true
+        },
+        {
+            "tTxt": "맛점",
+            "tExpDate": "2026-06-02 13:40:00",
+            "tRegDate": "2026-06-02 12:53:19",
+            "tModDate": "2026-06-02 12:53:19",
+            "tComplete": false
+        }
+    ]
+}
